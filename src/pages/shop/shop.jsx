@@ -6,7 +6,7 @@ import { useState } from 'react';                               //importa useSta
 import { useEffect } from 'react';                              //importa useEffect 
 import LogoMenu from '../../components/logo2.jsx'     
 
-const URI = 'http://localhost:3001/products/';                 //se hacen las peticiones aqui 
+const URI = 'https://tiendaxd.onrender.com/products/' || 'http://localhost:3001/products/';                 //se hacen las peticiones aqui 
 
 export const Shop = () => {                                     //se exporta la tienda           
 

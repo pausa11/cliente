@@ -4,7 +4,7 @@ import axios from 'axios';                                      //se importa axi
 import { useState } from 'react';                               //se importa usestate
 import { useEffect } from 'react';                              //se importa useeffect                        
 
-const URI = 'http://localhost:3001/products/';                  //aqui se hacen las peticiones
+const URI = 'https://tiendaxd.onrender.com/products/' || 'http://localhost:3001/products/';                  //aqui se hacen las peticiones
 
 export const EditProduct = () => {                              //se crea el componente           
 

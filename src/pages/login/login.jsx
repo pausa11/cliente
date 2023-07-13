@@ -7,7 +7,7 @@ import { ShopContext } from "../../context/shop-context";       //se importa el 
 import { useContext } from "react";                             //se importa usecontext para poder usar el contexto  
 import LogoTienda from '../../components/logo.jsx'             
 
-const URI = 'http://localhost:3001/users/';                     //ruta para hacer las peticiones 
+const URI = 'https://tiendaxd.onrender.com/users/' || 'http://localhost:3001/users/';                     //ruta para hacer las peticiones 
 
 
 

@@ -3,7 +3,7 @@ import axios from 'axios';                                                      
 import { useEffect } from 'react';                                                  //se importa useeffect para poder usarlo en el hook
 
 export const ShopContext = createContext(null);                                     //se crea el contexto que se usara globalmente
-const URI = 'http://localhost:3001/products/';                                      //esta sera la ruta a la cual se generaran peticiones en este caso sera para los productos
+const URI = 'https://tiendaxd.onrender.com/products/' || 'http://localhost:3001/products/';                                      //esta sera la ruta a la cual se generaran peticiones en este caso sera para los productos
 
 const getDefaultCart = () => {                                                      //se crea un arreglo que se usara para darle una cantidad a cada producto esto, cada posicion del arreglo contendra un cero como cantidad
     let cart = {}                                                                   //se crea un objeto vacio                                  

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";                 //importa useNav
 import axios from 'axios';                                      //importa axios para poder hacer peticiones
 import { useState, useEffect } from "react";                    //importa usestate y useeffect para poder usarlos
 
-const URI = 'http://localhost:3001/users/';                     //direccion en la que se hacen peticiones 
+const URI = 'https://tiendaxd.onrender.com/users/' || 'http://localhost:3001/users/';                     //direccion en la que se hacen peticiones 
 
 const Register = () => {
     const [name, setName] = useState('');                       //todo esto son valores que se registran en la base de datos

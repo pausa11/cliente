@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";                     //se importa
 import axios from 'axios';                                          //se importa axios            
 import { useState } from "react";                                   //se importa usestate              
 
-const URIADMIN = 'http://localhost:3001/users/3/';                  //aqui se hacen las peticiones para el admin
+const URIADMIN = 'https://tiendaxd.onrender.com/users/3/' || 'http://localhost:3001/users/3/';                  //aqui se hacen las peticiones para el admin
 
 const EditAdmin = () => {
     const [password, setPassword] = useState('');                   //se guarda la contrasena
