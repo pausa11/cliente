@@ -47,7 +47,7 @@ export const ShopContextProvider = (props) => {                                 
     };
 
     const addToCart = async (itemId) => {                                           //funcion para poder agregar al carrito enviando como parametro el id del producto y poder reservarlo en el servidor
-        await axios.get('http://localhost:3001/products/book/'+ itemId + '?f=book') //se genera una peticion get para poder traer el el producto el cual se va reservar el producto
+        await axios.get(('https://tiendaxd.onrender.com/products/book/' || 'http://localhost:3001/products/book/')+ itemId + '?f=book') //se genera una peticion get para poder traer el el producto el cual se va reservar el producto
         .then(({ data }) => {                                                       //se obtiene el estado del producto                            
             data==='Booked' ? setCartItems((prev) => ({...prev, [itemId]: prev[itemId] + 1 })) : void(0);//si el dato extraido es Booked le sumamos 1 a la posicion que represente al producto dentro del arreglo para poder saber la cantidad de cada producto
             data==='Stockout' ? alert('Empty product') : void(0);                   //en caso de que el estado retornado sea Stockout se crea una alerta que dice que el producto esta vacio y no hace nada
