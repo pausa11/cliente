@@ -1,0 +1,13 @@
+.App {/*se le da un tamaño a la pagina*/
+  font-family: 'Roboto', sans-serif;
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  background: rgb(166,0,0);
+  background: radial-gradient(circle, rgba(166,0,0,0.7347054380664653) 53%, rgba(156,9,9,0.8434667673716012) 100%);
+}
+
+body {/*se quita el padding y margin que vienen por defecto en la pagina*/
+  padding: 0;
+  margin: 0;
+}

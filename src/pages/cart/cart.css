@@ -1,0 +1,155 @@
+.cart {/*se le da poscion al carro*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.cart h1 {
+text-decoration: underline;
+}
+
+.cartItem {/*se le da posicion a cada item del carrito cuando se ingresa*/
+  width: 700px;
+  height: 250px;
+  display: flex;
+  background-color: white;
+  align-items: center;
+  box-shadow: 0px 3px 15px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  margin: 30px;
+}
+
+.cartItem img { /*propiedades de las imagenes de los productos*/
+  width: 200px;
+  height: 200px;
+  padding-left: 10px;
+  border-radius: 20px;
+}
+
+.cartItem .description {
+  width: 100%;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.countHandler input {
+  width: 80px;
+  height: 20px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.countHandler button {
+  height: 25px;
+  width: 30px;
+}
+
+
+
+
+.checkout {
+  background-color: white;
+  min-width: 220px;
+  min-height: 200px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.checkout button {
+  width: 150px;
+  height: 50px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.checkout .buttoncheckout {
+  background-color: red;
+  
+}
+
+.checkout .continue {
+  background-color: rgb(242, 160, 53);
+}
+
+@media(max-width: 727px) {
+  .cartItem {
+    width: 500px;
+    height: 250px;
+  }
+
+  .cartItem img { 
+    width: 175px;
+    height: 175px;
+    padding-left: 10px;
+    border-radius: 20px;
+  }
+
+  .cartItem .description {
+    font-size: 25px;
+    padding: 10px;
+  }
+
+}
+
+@media(max-width: 520px) {
+  .cartItem {
+    width: 350px;
+    height: 200px;
+  }
+
+  .cartItem img { 
+    width: 150px;
+    height: 150px;
+  }
+
+  .cartItem .description {
+    font-size: 18px;
+  }
+}
+
+@media(max-width: 360px) {
+  .cartItem {
+    width: 250px;
+    height: 175px;
+  }
+
+  .cartItem img { 
+    width: 100px;
+    height: 120px;
+    padding-left: 10px;
+    border-radius: 20px;
+  }
+
+  .cartItem .description {
+    font-size: 13px;
+  }
+
+  .countHandler input {
+    width: 20px;
+    height: 15px;
+    text-align: center;
+    font-weight: bolder;
+  }
+  
+  .countHandler button {
+    height: 22px;
+    width: 25px;
+  }
+
+  .checkout {
+    font-size: 16px;
+  }
+
+  .checkout button {
+   font-size: 13px;
+}
+}

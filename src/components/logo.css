@@ -1,0 +1,9 @@
+img {
+    height: 130px;
+}
+
+.LogoContenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

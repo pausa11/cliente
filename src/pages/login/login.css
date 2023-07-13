@@ -1,0 +1,95 @@
+.login-form {
+    max-width: 400px;
+    margin: 65px auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .login-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-form input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .login-form .btn-login {
+    background-color: #a51e15;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .login-form .btn-login:hover {
+    background-color: #af2e14;
+  }
+  
+  .login-form .btn-register {
+    text-align: center;
+    cursor: pointer;
+    color: #000000;
+  }
+  
+  .login-form .btn-register:hover {
+    text-decoration: underline;
+  }
+  
+  /* Estilos responsive */
+  
+  @media (max-width: 767px) {
+    /* Para dispositivos con un ancho máximo de 767px */
+  
+    .login-form {
+      max-width: 400px;
+      padding: 10px;
+    }
+  
+    .login-form h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  
+    .login-form input,
+    .login-form .btn-login,
+    .login-form .btn-register {
+      font-size: 15px;
+      padding: 8px;
+    }
+  }
+
+  @media (max-width: 530px) {
+    /* Para dispositivos con un ancho máximo de 767px */
+  
+    .login-form {
+      max-width: 300px;
+      padding: 10px;
+    }
+  
+ }
+
+
+  @media (max-width: 348px) {
+    /* Para dispositivos con un ancho máximo de 767px */
+  
+    .login-form {
+      max-width: 200px;
+      padding: 10px;
+    }
+}
+  
+
+  
+  
