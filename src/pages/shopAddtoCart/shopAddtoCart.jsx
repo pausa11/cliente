@@ -26,7 +26,7 @@ export const ShopAddtoCart = () => {                    //aqui se exporta la tie
             </div>
             <div className="products">                  {/*aqui se crean los productos */}         
                 {products.map((product) => (            //aqui se mapean los productos
-                    <Product data={product} />          //aqui por todo el arreglo de productos se imprimen los productos
+                    <Product key={product.id} data={product} />          //aqui por todo el arreglo de productos se imprimen los productos
                 ))}
             </div>
         </div>

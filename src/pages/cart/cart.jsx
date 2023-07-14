@@ -52,7 +52,7 @@ export const Cart = () => {
     return (                                                        //se retorna el componente                      
         <div className="cart">                                      {/*se crea el componente contenedor de clase cart*/}          
             <div>       
-                <h1> Your Cart Items</h1>                           {/*se crea el componente*/}       
+                <h1 className='carItems'> Your Cart Items</h1>                           {/*se crea el componente*/}       
             </div>
             <div className="cartItems">
                 {products.map((product) => {
@@ -64,11 +64,11 @@ export const Cart = () => {
             </div>
             {totalAmount > 0 ?                                      //si el total es mayor que 0
             <div className="checkout">                              {/*se crea el componente*/}       
-                <p> Subtotal: ${totalAmount}</p>                    {/*imprime el total de la compra calculado */}
-                <button onClick={() => navigate ("/shop")}> Continue Shopping</button>{/*si se le da click se devuelve a la tienda principal */}
-                <button onClick={buy}> Checkout </button>           {/*si se le da clic llama a la funcion buy que lleva a procesar el pago */}
+                <p> Subtotal: {totalAmount.toLocaleString()} $COP</p>                    {/*imprime el total de la compra calculado */}
+                <button className='buttonContinue' onClick={() => navigate ("/shop")}> Continue Shopping</button>{/*si se le da click se devuelve a la tienda principal */}
+                <button className='buttonCheckout' onClick={buy}> Checkout </button>           {/*si se le da clic llama a la funcion buy que lleva a procesar el pago */}
             </div>
-            : <h1> Your Cart is Empty </h1>}                        {/*si el carrito esta vacio se muestra un mensaje */}
+            : <h1 className='emptyCart'> Your Cart is Empty </h1>}                        {/*si el carrito esta vacio se muestra un mensaje */}
         </div>
     )
 };

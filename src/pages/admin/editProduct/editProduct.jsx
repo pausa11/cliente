@@ -25,7 +25,7 @@ export const EditProduct = () => {                              //se crea el com
             </div>
             <div className="products">                          {/*se crea el componente*/}           
                 {products.map((product) => (                    //se mapea el arreglo de productos
-                    <Product data={product} />                  // se muestran todos los productos que estan en el arreglo
+                    <Product key={product.id} data={product} />                  // se muestran todos los productos que estan en el arreglo
                 ))}                                                     
             </div>
         </div>

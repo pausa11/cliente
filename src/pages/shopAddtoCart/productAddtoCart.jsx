@@ -22,7 +22,7 @@ export const Product = (props) => {
                 <p> 
                     <b>{nombre}</b>                                     {/*se muestran los nombres de los productos en la pagina principal */}
                 </p>
-                <p> ${precio}</p>                                       {/*se muestran los precios de los productos en la pagina principal */}
+                <p> {precio.toLocaleString()} $COP</p>                                       {/*se muestran los precios de los productos en la pagina principal */}
             </div>
             <button className="addToCartBttn" onClick={() => addToCart(id)}> {/*se agrega un producto por su id */}
                 Add To Cart {cartItemAmount > 0 && <> ({cartItemAmount})</>} {/*se imprime el numero de la cantidad */}

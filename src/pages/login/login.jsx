@@ -57,7 +57,7 @@ const Login = () => {                                           //se crea el com
         <div className="login-form">                            {/*se crea el formulario de login */}      
             <LogoTienda/>                                       {/*se llama el logo de la tienda */} 
             <h2>Login</h2>
-            <form onSubmit={compare()}>                         {/*al enviar el formulario se llama la funcion compare */}
+            <form onSubmit={compare}>                         {/*al enviar el formulario se llama la funcion compare */}
                 <input 
                     value={entrada}                             //{/*se ingresa dentro de entrada el valor del input */}
                     onChange={(e) => SetEntrada(e.target.value)}    //se cambia el valor de entrada por el valor del input

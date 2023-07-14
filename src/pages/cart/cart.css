@@ -7,8 +7,14 @@
 }
 
 .cart h1 {
-text-decoration: underline;
+  text-decoration: none;
+  color: white;
 }
+
+.emptyCart  {
+  font-size: 20px
+}
+
 
 .cartItem {/*se le da posicion a cada item del carrito cuando se ingresa*/
   width: 700px;
@@ -71,13 +77,13 @@ text-decoration: underline;
   cursor: pointer;
 }
 
-.checkout .buttoncheckout {
-  background-color: red;
+.buttonCheckout {
+  background-color: rgb(144, 105, 232);
   
 }
 
-.checkout .continue {
-  background-color: rgb(242, 160, 53);
+.buttonContinue {
+  background-color: rgb(91, 228, 100);
 }
 
 @media(max-width: 727px) {

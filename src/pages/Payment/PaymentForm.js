@@ -52,7 +52,7 @@ export default function PaymentForm() {                                       //
     if (!error) {                                                             // Se usa el if para verificar si error esta disponible
       try {                                                                   // Se usa el try
         const { id } = paymentMethod;                                         // Se crea la constante id que usa el paymentMethod
-        const response = await axios.post("http://localhost:3001/payment", {  // Se crea la constante response que usa el axios.post de payment
+        const response = await axios.post('https://tiendaxd.onrender.com/products/book/' || 'http://localhost:3001/products/book/', {  // Se crea la constante response que usa el axios.post de payment
           amount: context.payAmount,                                          // Se usa el amount de context                  
           id                                                                     
         });                                                                   

@@ -29,7 +29,7 @@ export const Product = (props) => {
                 <p> 
                     <b>{nombre}</b>                                 {/*se muestra toda la informacion de los productos */}
                 </p>
-                <p> ${precio}</p>                                   {/*se muestra toda la informacion de los productos */}
+                <p> {precio.toLocaleString()} $COP</p>                                   {/*se muestra toda la informacion de los productos */}
                 <p> Max Stock: {stockMax}</p>
                 <p> Min Stock: {stockMin}</p>
                 <form onSubmit={update} action="/auth" method="post">{/*al momento de enviar el formulario se llama a la funcion update para actualizar el producto */}

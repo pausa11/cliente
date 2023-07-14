@@ -18,7 +18,7 @@ export const Product = (props) => {
                 <p> 
                     <b>{nombre}</b>                             {/*aqui se muestran los nombres de los productos en la pagina principal */}
                 </p>
-                <p> ${precio}</p>                               {/*aqui se muestran los precios de los productos en la pagina principal */}
+                <p>{precio.toLocaleString()}$COP</p>                               {/*aqui se muestran los precios de los productos en la pagina principal */}
             </div>
         </div> 
     );

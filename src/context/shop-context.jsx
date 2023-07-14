@@ -58,7 +58,7 @@ export const ShopContextProvider = (props) => {                                 
     };
 
     const removeFromCart = async (itemId) => {                                      //funcion para remover del carrito a partir del id
-        await axios.get('http://localhost:3001/products/book/'+ itemId + '?f=unbook')//en esta ruta se hace la peticion
+        await axios.get(('https://tiendaxd.onrender.com/products/book/' || 'http://localhost:3001/products/book/') + itemId + '?f=unbook')//en esta ruta se hace la peticion
         .then(({ data }) => {                                                       //se obtiene el estado del producto                           
             data==='Unbooked' ? setCartItems((prev) => ({...prev, [itemId]: prev[itemId] - 1 })) : void(0);//si tiene el estado unbooked se le resta 1 en el arreglo de la cantidad
         })

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";                              //se importa react y usecontext    
 import { ShopContext } from "../../context/shop-context";               //importamos el contexto 
+import "./cart-item.css";                                               //importamos el css
 
 export const CartItem = (props) => {
     const { id, nombre, precio, img1 } = props.data;                    //con los props recibimos los datos extraidos de los productos y los almacenamos en las variables
@@ -11,7 +12,7 @@ export const CartItem = (props) => {
                 <p> 
                     <b> {nombre} </b>                                   {/*se muestra el nombre del producto */}
                 </p>
-                <p> ${precio} </p>                                      {/*se muestra el precio del producto */}
+                <p> {precio.toLocaleString()} $COP </p>                                      {/*se muestra el precio del producto */}
                 <div className="countHandler">                          {/*se crea el componente de clase countHandler*/}
                     <button onClick={() => removeFromCart(id)}> - </button>{/*se llama a la funcion para bajar y subir la cantidad del producto comprado y igualmente para el + */}
                     <input value={cartItems[id]} />                     {/*se muestra la cantidad de productos comprados */}         
