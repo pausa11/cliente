@@ -63,7 +63,7 @@ export default function PaymentForm() {
           status = "failed";
         }
 
-        const response = await axios.post('http://localhost:3001/payment', {
+        const response = await axios.post('https://tiendaxd.onrender.com/payment' || 'http://localhost:3001/payment', {
           amount,
           id
         });
