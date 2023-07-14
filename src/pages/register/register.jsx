@@ -38,7 +38,7 @@ const Register = () => {
     }
 
     return (                                                    //retorna el formulario de registro             
-        <div className="register-form">                         //se crea el formulario de registro       
+        <div className="register-form">                         {/*se crea el formulario de registro*/}      
             <h2>register</h2>
             <form onSubmit={store} action="/auth" method="post"> {/*se llama a store en el momento de enviar el formulario */}
                 <input 

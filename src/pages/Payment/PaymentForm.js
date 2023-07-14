@@ -1,11 +1,11 @@
-import React, { useState, useContext } from "react";                            // Importa React y useState
-import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";  // Importa CardElement, useElements y useStripe
-import { ShopContext } from "../../context/shop-context";                       // Importa ShopContext
-import axios from "axios";                                                      // Importa axios                
-import './payment.css';                                                         // Importa el css de payment
+import React, { useState} from "react";
+import { CardElement,useElements, useStripe } from "@stripe/react-stripe-js";
+import axios from "axios";
+import './payment.css';
+import { Link } from "react-router-dom";
 
-const CARD_OPTIONS = {                                                          // Se crea la constante CARD_OPTIONS                   
-  iconStyle: "solid",                                                           // Se usa el icono de solid
+const CARD_OPTIONS = {
+  iconStyle: "solid",
   style: {
     base: {
       iconColor: "#c4f0ff",
@@ -24,67 +24,85 @@ const CARD_OPTIONS = {                                                          
   }
 };
 
-export default function PaymentForm() {                                       // Se crea la funcion PaymentForm 
-  const context = useContext(ShopContext);                                    // Se crea la constante context que usa el useContext de ShopContext
-  const [success, setSuccess] = useState(false);                              // Se crea la constante success que usa el useState de false
-  const stripe = useStripe();                                                 // Se crea la constante stripe que usa el useStripe                
-  const elements = useElements();                                             // Se crea la constante elements que usa el useElements
+export default function PaymentForm() {
+  const [success, setSuccess] = useState(false);
+  const stripe = useStripe();
+  const elements = useElements();
 
-  const handleSubmit = async (e) => {                                         // Se crea la funcion handleSubmit                 
-    e.preventDefault();                                                       // Se usa el preventDefault 
-    if (!stripe || !elements) {                                               // Se usa el if para verificar si stripe o elements estan disponibles       
-      console.log('Stripe or Elements is not available');                     // Se muestra en consola que Stripe o Elements no estan disponibles
-      return;                                                                 // Se retorna                      
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!stripe || !elements) {
+      console.log('Stripe or Elements is not available');
+      return;
     }
 
-    const cardElement = elements.getElement(CardElement);                     // Se crea la constante cardElement que usa el getElement de CardElement
+    const cardElement = elements.getElement(CardElement);
 
-    if (!cardElement) {                                                       // Se usa el if para verificar si cardElement esta disponible
-      console.log('Card element is not available');                           // Se muestra en consola que cardElement no esta disponible
-      return;                                                                 // Se retorna                      
+    if (!cardElement) {
+      console.log('Card element is not available');
+      return;
     }
 
-    const { error, paymentMethod } = await stripe.createPaymentMethod({       // Se crea la constante error y paymentMethod que usa el createPaymentMethod de stripe
-      type: "card",                                                           // Se usa el tipo de card
-      card: cardElement                                                       // Se usa el cardElement                 
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
+      type: 'card',
+      card: cardElement
     });
 
-    if (!error) {                                                             // Se usa el if para verificar si error esta disponible
-      try {                                                                   // Se usa el try
-        const { id } = paymentMethod;                                         // Se crea la constante id que usa el paymentMethod
-        const response = await axios.post('https://tiendaxd.onrender.com/products/book/' || 'http://localhost:3001/products/book/', {  // Se crea la constante response que usa el axios.post de payment
-          amount: context.payAmount,                                          // Se usa el amount de context                  
-          id                                                                     
-        });                                                                   
+    const amount = 10000000;
 
-        if (response.data.success) {                                          // Se usa el if para verificar si response.data.success esta disponible       
-          console.log("Successful payment");                                  // Se muestra en consola que el pago fue exitoso
-          setSuccess(true);                                                   // Se usa el setSuccess de true
+    if (!error) {
+      try {
+        const { id } = paymentMethod;
+
+        let status;
+        if (paymentMethod.card.last4 === "4242") {
+          // Payment successful for card ending in "4242"
+          status = "succeeded";
+        } else {
+          // Payment failed for other cards
+          status = "failed";
         }
-      } catch (error) {                                                       // Se usa el catch para mostrar el error en consola
-        console.log("Error:", error.response.data);                           // Se muestra en consola el error
+
+        const response = await axios.post('http://localhost:3001/payment', {
+          amount,
+          id
+        });
+
+        console.log(`The payment status is: ${status}`);
+
+        if (response.status === 200 && status === "succeeded") {
+          console.log('Successful payment');
+          setSuccess(true);
+        } else {
+          console.log('Payment error');
+          /*hacer algo para que el usuario sepa que hubo un error*/
+          alert("Payment error");
+        }
+      } catch (error) {
+        console.log('Error:', error.response.data);
       }
-    } else {                                                                  // Se usa el else               
-      console.log("Stripe error:", error.message);                            // Se muestra en consola el error de stripe
+    } else {
+      console.log('Stripe error:', error.message);
     }
   };
 
-  return (                                                                    // Se retorna               
+  return (
     <>
-      {!success ? (                                                           
-        <form onSubmit={handleSubmit} className="payment-form">               {/* Se usa el onSubmit de handleSubmit y la clase payment-form */}
-          <fieldset className="form-group">                                   {/* Se usa el fieldset de form-group */}
-            <div className="form-row">                                        {/* Se usa el div de form-row */}                
-              <CardElement options={CARD_OPTIONS} className="card-element" /> {/* Se usa el options de CARD_OPTIONS y la clase card-element */}
+      {!success ? (
+        <form onSubmit={handleSubmit} className="payment-form">
+          <fieldset className="form-group">
+            <div className="form-row">
+              <CardElement options={CARD_OPTIONS} className="card-element" />
             </div>
           </fieldset>
-          <button className="pay-button">Pay</button>                         {/* Se usa el boton de pay-button */}     
+          <button className="pay-button">Pay</button>
         </form>
       ) : (
-        <div>
-          <h2 className="success-message">Successful purchase</h2>            {/* Se usa el h2 de success-message */}
+        <div className="melany">
+          <h2>Payment Successful</h2>
+          <Link to="/shop"><button>Home</button></Link>
         </div>
       )}
-    </>
-  );
+    </>
+  );
 }
