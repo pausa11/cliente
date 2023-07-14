@@ -1,4 +1,4 @@
- .payment-form {
+.payment-form {
 	max-width: 400px;
 	margin: 0 auto;
  }
@@ -31,26 +31,34 @@
 	width: 100%;
   }
   
-  .success-message {
-	color: #28a745;
-  }
 
-  .melany{
-	/*estilizar el formulario de pago*/
-  
-  max-width: 400px;
-  margin: 0 auto;
-  color:#90ff46
+
+  .successfulContainer {  
+  display: flex;
+  height: 100vh;
+  align-items: start;
+  justify-content: center;
+  margin-top: 10px;
 }
 
-.melany button{
-  /*estilizar y centrar el boton de pagar*/
-	padding: 10px 20px;
 
-	background-color: #007bff;
+.successfulPayment {
+	background-color: white;
+	padding: 20px;
+	border-radius: 10px;
+	text-align: center;
+	width: 200px;
+	height: 150px;
+}
+
+
+.homeButton {
+  
+	padding: 10px 10px;
+	background-color: blueviolet;
 	color: #fff;
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
-	width: 30%;  
+	width: 100%;  
 }

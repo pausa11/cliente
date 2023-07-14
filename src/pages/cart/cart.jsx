@@ -41,7 +41,7 @@ export const Cart = () => {
             "10": cartItems[10],
         })
         .then((res) => {                                            //se imprime la respuesta                       
-            alert(res);                                             //se muestra un mensaje de exito
+            alert("Continuamos con el pago");                                             //se muestra un mensaje de exito
         }).catch((err) => {                                         //se imprime el error            
             alert(err.message)                                      //se muestra un mensaje de error          
         });

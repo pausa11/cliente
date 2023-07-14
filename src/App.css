@@ -3,8 +3,9 @@
   width: 100vw;
   height: auto;
   min-height: 100vh;
-  background: rgb(166,0,0);
-  background: radial-gradient(circle, rgba(166,0,0,0.7347054380664653) 53%, rgba(156,9,9,0.8434667673716012) 100%);
+  background:linear-gradient(rgb(100, 203, 229), rgb(155, 56, 153));
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 body {/*se quita el padding y margin que vienen por defecto en la pagina*/

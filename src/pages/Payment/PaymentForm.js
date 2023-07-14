@@ -1,5 +1,6 @@
-import React, { useState} from "react";
+import React, { useState, useContext} from "react";
 import { CardElement,useElements, useStripe } from "@stripe/react-stripe-js";
+import { ShopContext } from "../../context/shop-context";
 import axios from "axios";
 import './payment.css';
 import { Link } from "react-router-dom";
@@ -28,7 +29,8 @@ export default function PaymentForm() {
   const [success, setSuccess] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
-
+  const { setCartItems, getDefaultCart } = useContext(ShopContext);
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!stripe || !elements) {
@@ -63,7 +65,7 @@ export default function PaymentForm() {
           status = "failed";
         }
 
-        const response = await axios.post('https://tiendaxd.onrender.com/payment' || 'http://localhost:3001/payment', {
+        const response = await axios.post(('https://tiendaxd.onrender.com/payment' || 'http://localhost:3001/payment'), {
           amount,
           id
         });
@@ -75,8 +77,8 @@ export default function PaymentForm() {
           setSuccess(true);
         } else {
           console.log('Payment error');
-          /*hacer algo para que el usuario sepa que hubo un error*/
-          alert("Payment error");
+          
+          alert("Ha ocurrido un error al procesar el pago, por favor intente de nuevo");
         }
       } catch (error) {
         console.log('Error:', error.response.data);
@@ -98,9 +100,13 @@ export default function PaymentForm() {
           <button className="pay-button">Pay</button>
         </form>
       ) : (
-        <div className="melany">
-          <h2>Payment Successful</h2>
-          <Link to="/shop"><button>Home</button></Link>
+        <div className="successfulContainer">
+          <div className="successfulPayment">
+            <h2>Payment Successful</h2>
+            <Link to="/shop">
+            <button className="homeButton" onClick={() => setCartItems(getDefaultCart())}>Home</button>
+            </Link>
+          </div>
         </div>
       )}
     </>

@@ -38,30 +38,30 @@ const Register = () => {
     }
 
     return (                                                    //retorna el formulario de registro             
-        <div className="register-form">                         {/*se crea el formulario de registro*/}      
-            <h2>register</h2>
+        <div className="register-form">                               
+            <h2>Register</h2>
             <form onSubmit={store} action="/auth" method="post"> {/*se llama a store en el momento de enviar el formulario */}
                 <input 
                 value={name}                                    //se obtiene el valor del input         
                 onChange={ (e) => users.find(event => event.username === e.target.value) ? navigateRegister() : setName(e.target.value)}
-                type="text" name="user" id="user" placeholder="user"/>  {/*se crea el input para el usuario */}
+                type="text" name="user" id="user" placeholder="User"/>  {/*se crea el input para el usuario */}
                 <input 
                 value={password}                                //se obtiene el valor del input
                 onChange={ (e) => setPassword((e.target.value))}    //se obtiene el valor del input
-                type="password" name="pass" id="pass" placeholder="password"/>  {/*se crea el input para la contraseña */}
+                type="password" name="pass" id="pass" placeholder="Password"/>  {/*se crea el input para la contraseña */}
                 <input 
                 value={adress}                                  //se obtiene el valor del input               
                 onChange={ (e) => setAdress(e.target.value)}    //se obtiene el valor del input 
-                type="text" name="pass" id="pass" placeholder="adress"/>    {/*se crea el input para la direccion */}
+                type="text" name="pass" id="pass" placeholder="Adress"/>    {/*se crea el input para la direccion */}
                 <input 
                 value={telephone}                               //se obtiene el valor del input        
                 onChange={ (e) => setTelephone(e.target.value)} //se obtiene el valor del input
-                type="text" name="pass" id="pass" placeholder="telephone"/> {/*se crea el input para el telefono */}
+                type="text" name="pass" id="pass" placeholder="Telephone"/> {/*se crea el input para el telefono */}
                 <input 
                 value={email}                                   //se obtiene el valor del input    
                 onChange={ (e) => setEmail(e.target.value)}     //se obtiene el valor del input
-                type="text" name="pass" id="pass" placeholder="email"/> {/*se crea el input para el correo */}
-                <input type="submit" className="btn-login" value="register" />  {/*se crea el boton para enviar el formulario */}
+                type="text" name="pass" id="pass" placeholder="Email"/> {/*se crea el input para el correo */}
+                <input type="submit" className="btn-login" value="Register" />  {/*se crea el boton para enviar el formulario */}
             </form>
         </div>
     )

@@ -85,7 +85,7 @@ font-size: 14px;
 
 .addToCartBttn {
   margin: 10px; 
-  background-color: rgb(203, 30, 30);
+  background: linear-gradient(rgb(40, 51, 197), rgb(155, 56, 153));
   color: white;
   border: none;
   height: 30px;

@@ -67,10 +67,10 @@ export const ShopContextProvider = (props) => {                                 
         }) 
     };
 
-    const contextValue = { cartItems, addToCart, removeFromCart, getTotalCartAmount, loggedChanger, logged, AdminChanger, admin, payAumount,setPayAumount};//metemos todas las funciones y hooks dentro del contexto
+    const contextValue = { cartItems, setCartItems, addToCart, removeFromCart, getDefaultCart, getTotalCartAmount, loggedChanger, logged, AdminChanger, admin, payAumount,setPayAumount};//metemos todas las funciones y hooks dentro del contexto
     return (                                                                        //retornamos el contexto
-        <ShopContext.Provider value={contextValue}>                                 {/*le pasamos el valor del contexto*/}
-            {props.children}                                                        {/*le pasamos los hijos que tendra el contexto*/}
+        <ShopContext.Provider value={contextValue}>                                 
+            {props.children}                                                        
         </ShopContext.Provider>                                                     //cerramos el contexto                               
     );
 };

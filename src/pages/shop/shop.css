@@ -1,9 +1,27 @@
+.product:hover {
+  transform: translateY(-10px);
+}
 
 .shopTitle {
   margin-top: 100px;
   text-align: center;
   font-size: 40px;
-  color: white;
+  color: #fff;
+  opacity: 0; /* Agregamos la propiedad de opacidad */
+  animation: fade-in 4s forwards; /* Aplicamos la animación de desvanecimiento */
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.slide-var img:hover {
+  transform: scale(1.1); /* Aumenta ligeramente la escala al pasar el ratón por encima */
 }
 
 .shopTitle h1 {

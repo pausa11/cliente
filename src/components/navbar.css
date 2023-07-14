@@ -1,10 +1,11 @@
 .navbar {/*se le da tamaño y posicion al header*/
   width: 100%;
   height: 80px;
-  background-color: rgb(91, 9, 9);
+  background-color: rgb(156, 77, 164);
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  font-family: 'Caprasimo', cursive;  
 }
 
 .links {/*se le da posicion a los contenedores de los link */
@@ -15,7 +16,7 @@
 
 .links a {/*se le agrega estilo a los textos de los links*/
   text-decoration: none;
-  color: white;
+  color: black;
   margin-left: 20px;
-  font-size: 25px;
+  font-size: 30px;
 }

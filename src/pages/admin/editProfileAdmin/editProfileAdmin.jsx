@@ -29,19 +29,19 @@ const EditAdmin = () => {
                 <input 
                 value={password}                                    /*se guarda la contrasena */             
                 onChange={ (e) => setPassword((e.target.value))}    /*se guarda la contrasena */
-                type="password" name="pass" id="pass" placeholder="password"/>  {/*se pide la contrasena */}
+                type="password" name="pass" id="pass" placeholder="Password"/>  {/*se pide la contrasena */}
                 <input 
                 value={adress}                                      /*se guarda la nueva direccion */
                 onChange={ (e) => setAdress(e.target.value)}        /*se guarda la nueva direccion */
-                type="text" name="pass" id="pass" placeholder="adress"/>    {/*se pide la nueva direccion */}
+                type="text" name="pass" id="pass" placeholder="Adress"/>    {/*se pide la nueva direccion */}
                 <input 
                 value={telephone}                                   /*se guarda el nuevo telefono */
                 onChange={ (e) => setTelephone(e.target.value)}     /*se guarda el nuevo telefono */
-                type="text" name="pass" id="pass" placeholder="telephone"/> {/*se pide el nuevo telefono */}
+                type="text" name="pass" id="pass" placeholder="Telephone"/> {/*se pide el nuevo telefono */}
                 <input 
                 value={email}                                       /*se guarda el nuevo email */                    
                 onChange={ (e) => setEmail(e.target.value)}         /*se guarda el nuevo email */
-                type="text" name="pass" id="pass" placeholder="email"/> {/*se pide el nuevo email */}
+                type="text" name="pass" id="pass" placeholder="Email"/> {/*se pide el nuevo email */}
                 <input type="submit" className="btn-login" value="Edit" />  {/*se envia el formulario */}
             </form>
         </div>

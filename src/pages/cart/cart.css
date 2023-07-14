@@ -7,14 +7,8 @@
 }
 
 .cart h1 {
-  text-decoration: none;
-  color: white;
+text-decoration: none;
 }
-
-.emptyCart  {
-  font-size: 20px
-}
-
 
 .cartItem {/*se le da posicion a cada item del carrito cuando se ingresa*/
   width: 700px;
@@ -75,15 +69,16 @@
   border-radius: 8px;
   margin: 10px;
   cursor: pointer;
-}
-
-.buttonCheckout {
-  background-color: rgb(144, 105, 232);
   
 }
 
-.buttonContinue {
-  background-color: rgb(91, 228, 100);
+.checkout .buttonCheckout{
+  background-color: blueviolet;
+  
+}
+
+.checkout .buttonContinue {
+  background: rgb(17, 58, 108); 
 }
 
 @media(max-width: 727px) {

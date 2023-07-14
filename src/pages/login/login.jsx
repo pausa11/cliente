@@ -53,38 +53,45 @@ const Login = () => {                                           //se crea el com
                 return false;                                   //retorna false        
     }
 
-    return (                                                    //se retorna el html
-        <div className="login-form">                            {/*se crea el formulario de login */}      
-            <LogoTienda/>                                       {/*se llama el logo de la tienda */} 
-            <h2>Login</h2>
-            <form onSubmit={compare}>                         {/*al enviar el formulario se llama la funcion compare */}
-                <input 
-                    value={entrada}                             //{/*se ingresa dentro de entrada el valor del input */}
-                    onChange={(e) => SetEntrada(e.target.value)}    //se cambia el valor de entrada por el valor del input
-                    type="text" name="user" id="user" placeholder="User" /> {/*se crea el input para el usuario */}
-                <input 
-                    value={entradaP}                            //se ingresa dentro de entradap el valor del input de la contraseña
-                    onChange={(e) => SetEntradaP((e.target.value))}     //se cambia el valor de entradap por el valor del input
-                    type="password" name="pass" id="pass" placeholder="Password" /> {/*se crea el input para la contraseña */}
-                <input type="submit" className="btn-login" value="Login" onClick={(e) => { //al darle click al si compare es true osea que el login tuvo exito
-                    e.preventDefault();                         //se previene el comportamiento por defecto del formulario
-                    if(compare())                               //preguntasi la comparacion tuvo exito
-                    {
-                        if (entrada === 'admin')                //si el nombre de la entrada 
-                        {
-                            navigateEditInventory();            //rediricciona al editor del inventario 
-                            context.AdminChanger(true);         //se activa el admin dentro del context
-                        }
-                        else 
-                            navigateShopAddtoCart();            //de lo contrario es un usuario normal por lo que envia al shop con los botones
-                        context.loggedChanger(true);            //se cabia a true el hook que pone si esta logeado el usuario
-                    }
-                    else
-                         navigateLogin() }}/>                   {/*si la comparacion no tuvo exito se redirige al login */}         
-            </form>
-            <div href="register" className="btn-register" onClick={navigateRegister}>register</div> {/*se lleva al registro si se le da click */}
+    return (     
+        <div className="mainContainer">
+            <div className="container">                                            
+                <div className="loginForm">                            {/*se crea el formulario de login */}      
+                                                        {/*se llama el logo de la tienda */} 
+                    <h2>Login</h2>
+                    <form onSubmit={compare()}>                         {/*al enviar el formulario se llama la funcion compare */}
+                        <input 
+                            value={entrada}                             //{/*se ingresa dentro de entrada el valor del input */}
+                            onChange={(e) => SetEntrada(e.target.value)}    //se cambia el valor de entrada por el valor del input
+                            type="text" name="user" id="user" placeholder="User" /> {/*se crea el input para el usuario */}
+                        <input 
+                            value={entradaP}                            //se ingresa dentro de entradap el valor del input de la contraseña
+                            onChange={(e) => SetEntradaP((e.target.value))}     //se cambia el valor de entradap por el valor del input
+                            type="password" name="pass" id="pass" placeholder="Password" /> {/*se crea el input para la contraseña */}
+                        <input type="submit" className="btn-login" value="Login" onClick={(e) => { //al darle click al si compare es true osea que el login tuvo exito
+                            e.preventDefault();                         //se previene el comportamiento por defecto del formulario
+                            if(compare())                               //preguntasi la comparacion tuvo exito
+                            {
+                                if (entrada === 'admin')                //si el nombre de la entrada 
+                                {
+                                    navigateEditInventory();            //rediricciona al editor del inventario 
+                                    context.AdminChanger(true);         //se activa el admin dentro del context
+                                }
+                                else 
+                                    navigateShopAddtoCart();            //de lo contrario es un usuario normal por lo que envia al shop con los botones
+                                context.loggedChanger(true);            //se cabia a true el hook que pone si esta logeado el usuario
+                            }
+                            else
+                                navigateLogin() }}/>                   {/*si la comparacion no tuvo exito se redirige al login */}         
+                    </form>
+                    <div href="register" className="btn-register" onClick={navigateRegister}>Register</div> {/*se lleva al registro si se le da click */}
+                </div>
+                <div className="containerLogo">
+                    <LogoTienda/> 
+                </div>
+            </div>
         </div>
     )
 }
 
-export default Login;                                           //se exporta el componente                 
+export default Login;                                           //se exporta el componente                                           //se exporta el componente                 
